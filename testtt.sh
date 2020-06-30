@@ -1,6 +1,7 @@
 #!/bin/bash
 
 ## REEEE
-echo "Refreshing internet connection..."
-ping -c 3 google.com
+echo "Getting needed packages..."
+pacman -Syy
+pacman -S reflector
 exit 0
