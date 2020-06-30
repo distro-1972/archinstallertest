@@ -1,9 +1,5 @@
 #!/bin/bash
-# Basic while loop
-counter=1
-while [ $counter -le 10 ]
+while : 
 do
-echo $counter
-((counter++))
+  echo "fuck"
 done
-echo All done
