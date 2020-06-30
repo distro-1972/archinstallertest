@@ -3,3 +3,4 @@ while :
 do
   echo "fuck"
 done
+EOF
