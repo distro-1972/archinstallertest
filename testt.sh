@@ -1,5 +1,6 @@
 #!/bin/bash
-for i in {1..5}
+FUCK=0
+while [FUCK = 0]
 do
   echo "fuck"
 done
