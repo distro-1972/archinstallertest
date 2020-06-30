@@ -1,9 +1,5 @@
 #!/bin/bash
 for i in {1..5}
 do
-   DoPrint()
+  echo "fuck"
 done
-
-function DoPrint() {
-  echo "Fuck"
-}
