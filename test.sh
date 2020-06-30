@@ -2,6 +2,9 @@
 
 loadkeys us
 device = "/dev/sda"
+boot = "/dev/sda1"
+swap = "/dev/sda2"
+main = "/dev/sda3"
 
 
 echo "Deleting all partitions..."
@@ -25,9 +28,9 @@ clear
 echo "Formatting partitions..."
 echo " "
 echo "Formatting /dev/sda1 to Fat32..."
-mkfs.vfat -F32 /dev/sda1
+mkfs.vfat -F32 "$boot"
 echo "Formatting /dev/sda2 to Swap..."
-mkswap /dev/sda2
-swapon /dev/sda2
+mkswap "$swap"
+swapon "$swap"
 echo "Formatting /dev/sda3 to ext4..."
-mkfs.ext4 /dev/sda3
+mkfs.ext4 "$main"
