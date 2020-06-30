@@ -10,13 +10,13 @@ echo "Done."
 echo "Creating new partitions..."
 echo " "
 echo "Creating /dev/sda1, 512MiB, EFI Boot partition."
-fdisk
-  n
+fdisk 
+  n 
   p 
-  1
-  2048
-  +512M
-  quit
+  1 
+  2048 
+  +512M 
+  quit 
 echo "-----------------------------------------------------"
 echo "Finished creating partitions!"
 sleep 2
