@@ -20,13 +20,6 @@ user=$(dialog --stdout --inputbox "Enter admin username" 0 0) || exit 1
 clear
 : ${user:?"user cannot be empty"}
 
-password=$(dialog --stdout --passwordbox "Enter admin password" 0 0) || exit 1
-clear
-: ${password:?"password cannot be empty"}
-password2=$(dialog --stdout --passwordbox "Enter admin password again" 0 0) || exit 1
-clear
-[[ "$password" == "$password2" ]] || ( echo "Passwords did not match"; exit 1; )
-
 devicelist=$(lsblk -dplnx size -o name,size | grep -Ev "boot|rpmb|loop" | tac)
 device=$(dialog --stdout --menu "Select installtion disk" 0 0 0 ${devicelist}) || exit 1
 clear
@@ -89,5 +82,5 @@ echo "LANG=en_US.UTF-8" > /mnt/etc/locale.conf
 arch-chroot /mnt useradd -mU -s /usr/bin/zsh -G wheel,uucp,video,audio,storage,games,input "$user"
 arch-chroot /mnt chsh -s /usr/bin/zsh
 
-echo "$user:$password" | chpasswd --root /mnt
-echo "root:$password" | chpasswd --root /mnt
+echo "$user:root" | chpasswd --root /mnt
+echo "root:$root" | chpasswd --root /mnt
