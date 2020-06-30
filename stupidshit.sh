@@ -77,7 +77,7 @@ SigLevel = Optional TrustAll
 Server = $REPO_URL
 EOF
 
-pacstrap /mnt base base-devel linux linux-firmware
+pacstrap /mnt base base-devel linux linux-firmware mdaffin
 genfstab -t PARTUUID /mnt >> /mnt/etc/fstab
 echo "${hostname}" > /mnt/etc/hostname
 
