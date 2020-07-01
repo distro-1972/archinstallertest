@@ -90,8 +90,7 @@
 #echo "LANG=en_US.UTF-8" > /mnt/etc/locale.conf
 #
 clear
-arch-chroot /mnt useradd -mU -s /bin/bash -G wheel,uucp,video,audio,storage,games,input "$user"
+arch-chroot /mnt useradd -mU -s /bin/bash -G wheel,uucp,video,audio,storage,games,input enoki
 arch-chroot /mnt chsh -s /bin/bash
-
-echo "$user:$password" | chpasswd --root /mnt
-echo "root:$password" | chpasswd --root /mnt
+echo "$enoki:$root" | chpasswd --root /mnt
+echo "root:$root" | chpasswd --root /mnt
